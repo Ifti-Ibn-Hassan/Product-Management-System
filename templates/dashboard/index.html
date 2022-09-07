@@ -1,0 +1,17 @@
+{% extends 'partials/base.html' %}
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated and user.is_staff and user.is_superuser %}
+{% include 'partials/topside.html' %}
+<div class="row ">
+    <div class="col-md-6 my-4">
+        <div class="bg-grey">
+        </div>
+    </div>
+</div>
+{% else %}
+{% include 'dashboard/customer_index.html' %}
+{% endif%}
+
+{% endblock %}
